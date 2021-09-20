@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="AddOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xMLOrder" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AddOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateCreditCard">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="cardNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="exp" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="securityCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cardHolderName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="custNum" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateCreditCard_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateJebOrder">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateJebOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateRetailWebOrder">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateRetailWebOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateRitchieOrder">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateRitchieOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateSalesHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="custNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateSalesHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateSalesLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="item" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quantity" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="price" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateSalesLine_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateWebOrder">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateWebOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EnterOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="orderNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EnterOrder_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetEmailAddress">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="user" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="order" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetEmailAddress_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="OpenSalesOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="OpenSalesOrder_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="PrintTSCPack">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="orderNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PrintTSCPack_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="QuoteToOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="QuoteToOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RecieveTrans">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="order" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="postDate" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RecieveTrans_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RefreshItems">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="salesOrderNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RefreshItems_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ReleaseSalesOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReleaseSalesOrder_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ShipInvoice2">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shipLineDesc" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ShipInvoice2_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ShipInvoice">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ShipInvoice_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ShipLineUpdate">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ShipLineUpdate_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ShipTrans">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="order" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="postDate" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ShipTrans_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="orderNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xMLOrder" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateOrder_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="AddOrder">
+    <part name="parameters" element="tns:AddOrder" />
+  </message>
+  <message name="AddOrder_Result">
+    <part name="parameters" element="tns:AddOrder_Result" />
+  </message>
+  <message name="CreateCreditCard">
+    <part name="parameters" element="tns:CreateCreditCard" />
+  </message>
+  <message name="CreateCreditCard_Result">
+    <part name="parameters" element="tns:CreateCreditCard_Result" />
+  </message>
+  <message name="CreateJebOrder">
+    <part name="parameters" element="tns:CreateJebOrder" />
+  </message>
+  <message name="CreateJebOrder_Result">
+    <part name="parameters" element="tns:CreateJebOrder_Result" />
+  </message>
+  <message name="CreateRetailWebOrder">
+    <part name="parameters" element="tns:CreateRetailWebOrder" />
+  </message>
+  <message name="CreateRetailWebOrder_Result">
+    <part name="parameters" element="tns:CreateRetailWebOrder_Result" />
+  </message>
+  <message name="CreateRitchieOrder">
+    <part name="parameters" element="tns:CreateRitchieOrder" />
+  </message>
+  <message name="CreateRitchieOrder_Result">
+    <part name="parameters" element="tns:CreateRitchieOrder_Result" />
+  </message>
+  <message name="CreateSalesHeader">
+    <part name="parameters" element="tns:CreateSalesHeader" />
+  </message>
+  <message name="CreateSalesHeader_Result">
+    <part name="parameters" element="tns:CreateSalesHeader_Result" />
+  </message>
+  <message name="CreateSalesLine">
+    <part name="parameters" element="tns:CreateSalesLine" />
+  </message>
+  <message name="CreateSalesLine_Result">
+    <part name="parameters" element="tns:CreateSalesLine_Result" />
+  </message>
+  <message name="CreateWebOrder">
+    <part name="parameters" element="tns:CreateWebOrder" />
+  </message>
+  <message name="CreateWebOrder_Result">
+    <part name="parameters" element="tns:CreateWebOrder_Result" />
+  </message>
+  <message name="EnterOrder">
+    <part name="parameters" element="tns:EnterOrder" />
+  </message>
+  <message name="EnterOrder_Result">
+    <part name="parameters" element="tns:EnterOrder_Result" />
+  </message>
+  <message name="GetEmailAddress">
+    <part name="parameters" element="tns:GetEmailAddress" />
+  </message>
+  <message name="GetEmailAddress_Result">
+    <part name="parameters" element="tns:GetEmailAddress_Result" />
+  </message>
+  <message name="OpenSalesOrder">
+    <part name="parameters" element="tns:OpenSalesOrder" />
+  </message>
+  <message name="OpenSalesOrder_Result">
+    <part name="parameters" element="tns:OpenSalesOrder_Result" />
+  </message>
+  <message name="PrintTSCPack">
+    <part name="parameters" element="tns:PrintTSCPack" />
+  </message>
+  <message name="PrintTSCPack_Result">
+    <part name="parameters" element="tns:PrintTSCPack_Result" />
+  </message>
+  <message name="QuoteToOrder">
+    <part name="parameters" element="tns:QuoteToOrder" />
+  </message>
+  <message name="QuoteToOrder_Result">
+    <part name="parameters" element="tns:QuoteToOrder_Result" />
+  </message>
+  <message name="RecieveTrans">
+    <part name="parameters" element="tns:RecieveTrans" />
+  </message>
+  <message name="RecieveTrans_Result">
+    <part name="parameters" element="tns:RecieveTrans_Result" />
+  </message>
+  <message name="RefreshItems">
+    <part name="parameters" element="tns:RefreshItems" />
+  </message>
+  <message name="RefreshItems_Result">
+    <part name="parameters" element="tns:RefreshItems_Result" />
+  </message>
+  <message name="ReleaseSalesOrder">
+    <part name="parameters" element="tns:ReleaseSalesOrder" />
+  </message>
+  <message name="ReleaseSalesOrder_Result">
+    <part name="parameters" element="tns:ReleaseSalesOrder_Result" />
+  </message>
+  <message name="ShipInvoice2">
+    <part name="parameters" element="tns:ShipInvoice2" />
+  </message>
+  <message name="ShipInvoice2_Result">
+    <part name="parameters" element="tns:ShipInvoice2_Result" />
+  </message>
+  <message name="ShipInvoice">
+    <part name="parameters" element="tns:ShipInvoice" />
+  </message>
+  <message name="ShipInvoice_Result">
+    <part name="parameters" element="tns:ShipInvoice_Result" />
+  </message>
+  <message name="ShipLineUpdate">
+    <part name="parameters" element="tns:ShipLineUpdate" />
+  </message>
+  <message name="ShipLineUpdate_Result">
+    <part name="parameters" element="tns:ShipLineUpdate_Result" />
+  </message>
+  <message name="ShipTrans">
+    <part name="parameters" element="tns:ShipTrans" />
+  </message>
+  <message name="ShipTrans_Result">
+    <part name="parameters" element="tns:ShipTrans_Result" />
+  </message>
+  <message name="UpdateOrder">
+    <part name="parameters" element="tns:UpdateOrder" />
+  </message>
+  <message name="UpdateOrder_Result">
+    <part name="parameters" element="tns:UpdateOrder_Result" />
+  </message>
+  <portType name="navSalesAPI_Port">
+    <operation name="AddOrder">
+      <input name="AddOrder" message="tns:AddOrder" />
+      <output name="AddOrder_Result" message="tns:AddOrder_Result" />
+    </operation>
+    <operation name="CreateCreditCard">
+      <input name="CreateCreditCard" message="tns:CreateCreditCard" />
+      <output name="CreateCreditCard_Result" message="tns:CreateCreditCard_Result" />
+    </operation>
+    <operation name="CreateJebOrder">
+      <input name="CreateJebOrder" message="tns:CreateJebOrder" />
+      <output name="CreateJebOrder_Result" message="tns:CreateJebOrder_Result" />
+    </operation>
+    <operation name="CreateRetailWebOrder">
+      <input name="CreateRetailWebOrder" message="tns:CreateRetailWebOrder" />
+      <output name="CreateRetailWebOrder_Result" message="tns:CreateRetailWebOrder_Result" />
+    </operation>
+    <operation name="CreateRitchieOrder">
+      <input name="CreateRitchieOrder" message="tns:CreateRitchieOrder" />
+      <output name="CreateRitchieOrder_Result" message="tns:CreateRitchieOrder_Result" />
+    </operation>
+    <operation name="CreateSalesHeader">
+      <input name="CreateSalesHeader" message="tns:CreateSalesHeader" />
+      <output name="CreateSalesHeader_Result" message="tns:CreateSalesHeader_Result" />
+    </operation>
+    <operation name="CreateSalesLine">
+      <input name="CreateSalesLine" message="tns:CreateSalesLine" />
+      <output name="CreateSalesLine_Result" message="tns:CreateSalesLine_Result" />
+    </operation>
+    <operation name="CreateWebOrder">
+      <input name="CreateWebOrder" message="tns:CreateWebOrder" />
+      <output name="CreateWebOrder_Result" message="tns:CreateWebOrder_Result" />
+    </operation>
+    <operation name="EnterOrder">
+      <input name="EnterOrder" message="tns:EnterOrder" />
+      <output name="EnterOrder_Result" message="tns:EnterOrder_Result" />
+    </operation>
+    <operation name="GetEmailAddress">
+      <input name="GetEmailAddress" message="tns:GetEmailAddress" />
+      <output name="GetEmailAddress_Result" message="tns:GetEmailAddress_Result" />
+    </operation>
+    <operation name="OpenSalesOrder">
+      <input name="OpenSalesOrder" message="tns:OpenSalesOrder" />
+      <output name="OpenSalesOrder_Result" message="tns:OpenSalesOrder_Result" />
+    </operation>
+    <operation name="PrintTSCPack">
+      <input name="PrintTSCPack" message="tns:PrintTSCPack" />
+      <output name="PrintTSCPack_Result" message="tns:PrintTSCPack_Result" />
+    </operation>
+    <operation name="QuoteToOrder">
+      <input name="QuoteToOrder" message="tns:QuoteToOrder" />
+      <output name="QuoteToOrder_Result" message="tns:QuoteToOrder_Result" />
+    </operation>
+    <operation name="RecieveTrans">
+      <input name="RecieveTrans" message="tns:RecieveTrans" />
+      <output name="RecieveTrans_Result" message="tns:RecieveTrans_Result" />
+    </operation>
+    <operation name="RefreshItems">
+      <input name="RefreshItems" message="tns:RefreshItems" />
+      <output name="RefreshItems_Result" message="tns:RefreshItems_Result" />
+    </operation>
+    <operation name="ReleaseSalesOrder">
+      <input name="ReleaseSalesOrder" message="tns:ReleaseSalesOrder" />
+      <output name="ReleaseSalesOrder_Result" message="tns:ReleaseSalesOrder_Result" />
+    </operation>
+    <operation name="ShipInvoice2">
+      <input name="ShipInvoice2" message="tns:ShipInvoice2" />
+      <output name="ShipInvoice2_Result" message="tns:ShipInvoice2_Result" />
+    </operation>
+    <operation name="ShipInvoice">
+      <input name="ShipInvoice" message="tns:ShipInvoice" />
+      <output name="ShipInvoice_Result" message="tns:ShipInvoice_Result" />
+    </operation>
+    <operation name="ShipLineUpdate">
+      <input name="ShipLineUpdate" message="tns:ShipLineUpdate" />
+      <output name="ShipLineUpdate_Result" message="tns:ShipLineUpdate_Result" />
+    </operation>
+    <operation name="ShipTrans">
+      <input name="ShipTrans" message="tns:ShipTrans" />
+      <output name="ShipTrans_Result" message="tns:ShipTrans_Result" />
+    </operation>
+    <operation name="UpdateOrder">
+      <input name="UpdateOrder" message="tns:UpdateOrder" />
+      <output name="UpdateOrder_Result" message="tns:UpdateOrder_Result" />
+    </operation>
+  </portType>
+  <binding name="navSalesAPI_Binding" type="tns:navSalesAPI_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="AddOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:AddOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="AddOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="AddOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateCreditCard">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateCreditCard" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateCreditCard">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateCreditCard_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateJebOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateJebOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateJebOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateJebOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateRetailWebOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateRetailWebOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateRetailWebOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateRetailWebOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateRitchieOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateRitchieOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateRitchieOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateRitchieOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateSalesHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateSalesHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateSalesHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateSalesHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateSalesLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateSalesLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateSalesLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateSalesLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateWebOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:CreateWebOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateWebOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateWebOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="EnterOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:EnterOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="EnterOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="EnterOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetEmailAddress">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:GetEmailAddress" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetEmailAddress">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetEmailAddress_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="OpenSalesOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:OpenSalesOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="OpenSalesOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="OpenSalesOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="PrintTSCPack">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:PrintTSCPack" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="PrintTSCPack">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="PrintTSCPack_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="QuoteToOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:QuoteToOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="QuoteToOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="QuoteToOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="RecieveTrans">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:RecieveTrans" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="RecieveTrans">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="RecieveTrans_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="RefreshItems">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:RefreshItems" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="RefreshItems">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="RefreshItems_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReleaseSalesOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:ReleaseSalesOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReleaseSalesOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReleaseSalesOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ShipInvoice2">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:ShipInvoice2" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ShipInvoice2">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ShipInvoice2_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ShipInvoice">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:ShipInvoice" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ShipInvoice">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ShipInvoice_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ShipLineUpdate">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:ShipLineUpdate" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ShipLineUpdate">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ShipLineUpdate_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ShipTrans">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:ShipTrans" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ShipTrans">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ShipTrans_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/navSalesAPI:UpdateOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="navSalesAPI">
+    <port name="navSalesAPI_Port" binding="tns:navSalesAPI_Binding">
+      <address location="http://gra-bc14:7047/BC14/WS/Equibrand%20Products%20Group/Codeunit/navSalesAPI" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
